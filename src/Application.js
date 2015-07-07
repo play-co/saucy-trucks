@@ -1,50 +1,38 @@
 import scene;
+import communityart;
 //import effects;
 
-exports = scene(function() {
+import .trucks.SauceTruck as SauceTruck;
+import .trucks.MissileTruck as MissileTruck;
+
+import .shots.Missile as Missile;
+
+exports = scene(function(gameData) {
 
   var groundY = scene.screen.height - 20;
 
   var shootFrom = function(truck) {
     console.log('Shot from: ', truck.team, truck.x, truck.y);
-    var sauce = scene.addActor('sauce', {
-      x: truck.x,
-      y: truck.y,
-      vy: -600,
-      ay: 400,
-      vx: 500
-    });
-
-    if (truck.team === 0) {
-      sauce.play('green');
-    } else {
-      sauce.play('red');
-      sauce.vx *= -1;
-    }
-
-    sauce.onEntered(scene.camera.bottomWall, function() {
-      sauce.destroy();
-    });
-
-    sauce.onTick(function() {
-      sauce.rotateAt(sauce.x + sauce.vx, sauce.y + sauce.vy, -Math.PI / 2);
-    });
-
-    return sauce;
+    truck.shoot();
   };
 
   /**
    * @param {int} team - 0 for friendly, 1 for foe
    */
-  var addTruck = function(team) {
-    var truck = scene.addActor('truck', { y: groundY });
-    truck.team = team;
+  var addTruck = function(team, ctor) {
+    var truckConfig = merge(communityart('truck'), {
+      team: team,
+      y: groundY
+    });
+    var truck = scene.conglomorate(ctor, truckConfig);
+
+    truck.setAim(45);
 
     if (team === 0) {
       // PLAYER
       truck.play('green');
 
-      truck.x = scene.camera.left;
+      truck.x = scene.camera.left + 100;
 
       truck.onTouch(function() {
         shootFrom(truck);
@@ -54,13 +42,17 @@ exports = scene(function() {
       truck.play('red');
       truck.flipX = true;
 
-      truck.x = scene.camera.right;
+      truck.x = scene.camera.right - 100;
+
+      truck.onTouch(function() {
+        shootFrom(truck);
+      });
     }
 
     return truck;
   };
 
-  addTruck(0);
-  addTruck(1);
+  addTruck(0, MissileTruck);
+  addTruck(1, SauceTruck);
 
 });

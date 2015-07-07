@@ -1,1 +1,22 @@
-{"title": "saucyTrucks", "ios": {"bundleID": "co.weeby.producer.joeorg.saucyTrucks"}, "dependencies": {"devkit-scene": "git@github.com:gameclosure/devkit-scene.git#f4314783905957c5cccaf42c98346a152e96c6eb", "devkit-core": "git@github.com:gameclosure/devkit-core.git#ee462077c22ee82c6edf1d37c16348b813f0e4be"}, "studio": {"domain": "studio.example.com", "stagingDomain": "staging.example.com", "name": "Your Studio Name"}, "appID": "919c55c6878f4c08aab49943b686a851", "android": {}, "shortName": "saucyTrucks", "supportedOrientations": ["portrait", "landscape"]}
+{
+  "android": {},
+  "appID": "919c55c6878f4c08aab49943b686a851",
+  "dependencies": {
+    "devkit-core": "git@github.com:gameclosure/devkit-core#ee462077c22ee82c6edf1d37c16348b813f0e4be",
+    "devkit-scene": "git@github.com:gameclosure/devkit-scene.git#f4314783905957c5cccaf42c98346a152e96c6eb"
+  },
+  "ios": {
+    "bundleID": "co.weeby.producer.joeorg.saucyTrucks"
+  },
+  "shortName": "saucyTrucks",
+  "studio": {
+    "domain": "studio.example.com",
+    "name": "Your Studio Name",
+    "stagingDomain": "staging.example.com"
+  },
+  "supportedOrientations": [
+    "portrait",
+    "landscape"
+  ],
+  "title": "saucyTrucks"
+}
