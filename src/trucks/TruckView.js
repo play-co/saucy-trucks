@@ -14,7 +14,7 @@ exports = Class(EntityView, function(supr) {
 //    opts.width = 140;
 //    opts.height = 100;
     opts.offsetX = -70;
-    opts.offsetY = -100
+    opts.offsetY = -100;
 
     supr(this, 'init', [opts]);
 

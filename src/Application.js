@@ -7,14 +7,11 @@ import .trucks.MissileTruck as MissileTruck;
 
 import .shots.Missile as Missile;
 
+import .setupUI;
+
 exports = scene(function(gameData) {
 
   var groundY = scene.screen.height - 20;
-
-  var shootFrom = function(truck) {
-    console.log('Shot from: ', truck.team, truck.x, truck.y);
-    truck.shoot();
-  };
 
   /**
    * @param {int} team - 0 for friendly, 1 for foe
@@ -24,7 +21,7 @@ exports = scene(function(gameData) {
       team: team,
       y: groundY
     });
-    var truck = scene.conglomorate(ctor, truckConfig);
+    var truck = scene.addCustomActor(ctor, truckConfig);
 
     truck.setAim(45);
 
@@ -32,10 +29,10 @@ exports = scene(function(gameData) {
       // PLAYER
       truck.play('green');
 
-      truck.x = scene.camera.left + 100;
+      truck.x = scene.camera.left + 100 + 200;
 
       truck.onTouch(function() {
-        shootFrom(truck);
+        truck.shoot();
       });
     } else {
       // BADDIE
@@ -45,7 +42,7 @@ exports = scene(function(gameData) {
       truck.x = scene.camera.right - 100;
 
       truck.onTouch(function() {
-        shootFrom(truck);
+        truck.shoot();
       });
     }
 
@@ -54,5 +51,7 @@ exports = scene(function(gameData) {
 
   addTruck(0, MissileTruck);
   addTruck(1, SauceTruck);
+
+  setupUI.game();
 
 });

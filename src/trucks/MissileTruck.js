@@ -18,7 +18,7 @@ exports = Class(Truck, function(supr) {
     shotConfig.ay = 400;
     shotConfig.vx = 500;
     shotConfig.faceForward = { offset: -Math.PI / 2 };
-    var shot = scene.conglomorate(Missile, shotConfig);
+    var shot = scene.addCustomActor(Missile, shotConfig);
 
     if (this.team === 0) {
     } else {
