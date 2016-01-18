@@ -1,4 +1,3 @@
-import communityart;
 import .Truck;
 import .SauceTruckView;
 
@@ -7,7 +6,7 @@ exports = Class(Truck, function(supr) {
 
   this.createShot = function() {
     var exitPoint = this.getExit();
-    var sauceConfig = communityart('sauce');
+    var sauceConfig = scene.getConfig('sauce');
     sauceConfig.x = exitPoint.x;
     sauceConfig.y = exitPoint.y;
     sauceConfig.vy = -600;

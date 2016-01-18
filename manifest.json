@@ -2,8 +2,8 @@
   "android": {},
   "appID": "919c55c6878f4c08aab49943b686a851",
   "dependencies": {
-    "devkit-core": "git@github.com:gameclosure/devkit-core#ee462077c22ee82c6edf1d37c16348b813f0e4be",
-    "devkit-scene": "git@github.com:gameclosure/devkit-scene.git#f4314783905957c5cccaf42c98346a152e96c6eb"
+    "devkit-core": "https://github.com/gameclosure/devkit-core#b57de9e4e908f24cc2b8937e5d07cb94053f8dd4",
+    "devkit-scene": "git@github.com:gameclosure/devkit-scene.git#af9e4210a538d8f447984fa411314451a7e83a3c"
   },
   "ios": {
     "bundleID": "co.weeby.producer.joeorg.saucyTrucks"

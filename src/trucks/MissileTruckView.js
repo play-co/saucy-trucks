@@ -1,4 +1,3 @@
-import communityart;
 import .TruckView;
 
 import ui.ImageView as ImageView;
@@ -19,7 +18,7 @@ exports = Class(TruckView, function(supr) {
     supr(this, 'reset', [opts]);
 
     var launcherConfigName = this.team === 0 ? 'bananaLauncher' : 'hotdogLauncher';
-    var launcherConfig = communityart(launcherConfigName);
+    var launcherConfig = scene.getConfig(launcherConfigName);
     this.launcher.updateOpts(launcherConfig);
     this.updateLauncherImage();
   };

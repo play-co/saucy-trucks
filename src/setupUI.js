@@ -1,5 +1,3 @@
-import communityart;
-
 import scene.ui.ButtonView as ButtonView;
 import scene.ui.RadioGroup as RadioGroup;
 
@@ -17,7 +15,7 @@ exports = {
     });
 
     // TRUCK BUTTONS
-    var truck = new SauceTruck(communityart('truck'));
+    var truck = new SauceTruck(scene.getConfig('truck'));
     truck.reset({ team: 0 });
     var btn = this._makeTruckButton({
       truck: truck,
@@ -27,7 +25,7 @@ exports = {
     this.unitSelectGroup.addButton(btn);
     btn.setPressed(true);
 
-    truck = new MissileTruck(communityart('truck'));
+    truck = new MissileTruck(scene.getConfig('truck'));
     truck.reset({ team: 0 });
     this.unitSelectGroup.addButton(this._makeTruckButton({
       truck: truck,

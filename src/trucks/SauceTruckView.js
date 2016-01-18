@@ -1,4 +1,3 @@
-import communityart;
 import .TruckView;
 
 import ui.ImageView as ImageView;
@@ -11,7 +10,7 @@ exports = Class(TruckView, function(supr) {
 
     var bs = this.baseTruck.style;
 
-    var bottleConfig = communityart('sauceBottle', 'ImageView');
+    var bottleConfig = scene.getConfig('sauceBottle', 'ImageView');
     bottleConfig.superview = this;
     bottleConfig.x = 38 + bs.offsetX;
     bottleConfig.y = 15 + bs.offsetY;

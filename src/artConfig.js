@@ -1,6 +1,4 @@
-var art = GC.communityart;
-
-art.registerConfig('truck', [
+scene.registerConfig('truck', [
   {
     type: 'Entity',
     opts: {
@@ -26,7 +24,7 @@ art.registerConfig('truck', [
   }
 ]);
 
-art.registerConfig('sauce', {
+scene.registerConfig('sauce', {
   type: 'Entity',
   opts: {
     loop: false,
@@ -39,7 +37,7 @@ art.registerConfig('sauce', {
   }
 });
 
-art.registerConfig('sauceBottle', {
+scene.registerConfig('sauceBottle', {
   type: 'ImageView',
   opts: {
     width: 75,
@@ -51,7 +49,7 @@ art.registerConfig('sauceBottle', {
   }
 });
 
-art.registerConfig('bananaLauncher', {
+scene.registerConfig('bananaLauncher', {
   type: 'ImageView',
   opts: {
     width: 165,
@@ -63,7 +61,7 @@ art.registerConfig('bananaLauncher', {
   }
 });
 
-art.registerConfig('hotdogLauncher', {
+scene.registerConfig('hotdogLauncher', {
   type: 'ImageView',
   opts: {
     width: 200,
@@ -75,7 +73,7 @@ art.registerConfig('hotdogLauncher', {
   }
 });
 
-art.registerConfig('hotdog', {
+scene.registerConfig('hotdog', {
   type: 'Entity',
   opts: {
     width: 200,
@@ -88,7 +86,7 @@ art.registerConfig('hotdog', {
   }
 });
 
-art.registerConfig('banana', {
+scene.registerConfig('banana', {
   type: 'Entity',
   opts: {
     width: 200,

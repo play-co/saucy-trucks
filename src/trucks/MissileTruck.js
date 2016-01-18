@@ -1,5 +1,4 @@
 import scene;
-import communityart;
 
 import .Truck;
 import .MissileTruckView;
@@ -11,7 +10,7 @@ exports = Class(Truck, function(supr) {
 
   this.createShot = function() {
     var exitPoint = this.getExit();
-    var shotConfig = communityart(this.team === 0 ? 'banana' : 'hotdog');
+    var shotConfig = scene.getConfig(this.team === 0 ? 'banana' : 'hotdog');
     shotConfig.x = exitPoint.x;
     shotConfig.y = exitPoint.y;
     shotConfig.vy = -600;

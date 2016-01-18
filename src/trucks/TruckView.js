@@ -1,4 +1,3 @@
-import communityart;
 import entities.EntityView as EntityView;
 
 import ui.SpriteView as SpriteView;
@@ -21,7 +20,7 @@ exports = Class(EntityView, function(supr) {
     this.team = null;
     this.teamColor = null;
 
-    var truckConfig = communityart('truck', 'ImageView');
+    var truckConfig = scene.getConfig('truck', 'ImageView');
     truckConfig.superview = this;
     this.baseTruck = new ImageView(truckConfig);
   };

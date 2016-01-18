@@ -1,5 +1,5 @@
 import scene;
-import communityart;
+import .artConfig;
 //import effects;
 
 import .trucks.SauceTruck as SauceTruck;
@@ -17,7 +17,7 @@ exports = scene(function(gameData) {
    * @param {int} team - 0 for friendly, 1 for foe
    */
   var addTruck = function(team, ctor) {
-    var truckConfig = merge(communityart('truck'), {
+    var truckConfig = merge(scene.getConfig('truck'), {
       team: team,
       y: groundY
     });
